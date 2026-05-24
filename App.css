@@ -1,0 +1,90 @@
+/* 1. FORCE THE ENTIRE PAGE TO THE EDGES */
+:root {
+  /* Keep your variables but add these reset values */
+  --sidebar-width: 260px;
+}
+
+html, body, #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  /* CHANGE THIS LINE FROM hidden TO auto */
+  overflow: auto; 
+}
+
+/* 2. THE MAIN LAYOUT CONTAINER */
+.layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* This keeps the Sidebar fixed while only the main content scrolls */
+}
+
+/* 3. THE MAIN CONTENT AREA */
+.main-content {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto; /* Only the content scrolls, not the sidebar */
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* 4. UTILITY CLASSES FOR THE DASHBOARD */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+/* Glass effect for your cards */
+.glass {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Section styling */
+.section-card {
+  padding: 24px;
+}
+
+.section-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+/* Table styling to ensure it spreads wide */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tbl th {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #f1f5f9;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.tbl td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
